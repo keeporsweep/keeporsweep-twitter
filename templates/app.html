@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.status %}
+    {% for key, json_status in json_statuses %}
+    <twitter-status id="{{ key }}" class="animated bounceInDown" status="{{ json_status }}"></twitter-status>
+    {% endfor %}
+{% endif %}
+<div class="card-empty">
+    <h2>🐦🔀🗑️<br>All done!</h2>
+    <p>Refresh to keep or sweep again!</p>
+    <a class="btn btn-danger" href="/clearsessions.php"><img src="images/twitter.svg" alt="" /> Sign out</a>
+    <a class="btn btn-primary" href="/app.php"><img src="images/refresh.svg" alt="" /> Refresh!</a>
+</div>
+
+<div class="actions">
+    <button class="sweep animated bounceInLeft">Sweep</button>
+    <button class="keep animated bounceInRight">Keep</button>
+</div>
+
+{% endblock %}

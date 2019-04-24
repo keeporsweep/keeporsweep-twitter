@@ -1,0 +1,163 @@
+html {
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.page-header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-bottom: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.btn {
+    border-radius: 100px;
+}
+
+twitter-status {
+    position: absolute;
+    box-shadow: 0 .3vh 4vh rgba(29, 29, 29, .3);
+    border-radius: 3vh;
+    width: 500px;
+    max-width: 90%;
+    border: none;
+    display: none;
+}
+
+/* Only display first element */
+twitter-status:first-child {
+    display: block;
+}
+
+/* Only box-shadow for first few elements */
+twitter-status:nth-first-child(-n+5) {
+    /*display: inline-block;*/
+    /* filter: drop-shadow is very laggy on mobile */
+    box-shadow: 0 .3vh 4vh hsla(0, 0%, 10%, .1);
+}
+
+/* Slightly rotate every few other elements */
+twitter-status:nth-child(odd) {
+    transform: rotate(-3deg);
+}
+
+twitter-status:nth-child(3n) {
+    transform: rotate(4deg);
+}
+
+
+/* Actions */
+
+.actions {
+    height: 20vh;
+    position: absolute;
+    bottom: 5vh;
+}
+
+.sweep,
+.keep {
+    width: 20vh;
+    height: 20vh;
+    padding: 0;
+    padding-top: 8vh;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 5vh;
+    font-weight: bold;
+    background-size: 10vh;
+    background-position: center 2vh;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: none;
+    filter: drop-shadow(0 1vh 2vh hsla(0, 0%, 40%, 0.5));
+    cursor: pointer;
+    transition: all .03s ease-in-out;
+    /* TODO: Find out why this does not remove the outlines */
+    outline: none !important;
+}
+
+.sweep {
+    background-color: hsla(2, 81%, 55%, 1);
+    border-color: hsla(2, 81%, 55%, 1);
+    box-shadow: 0 1vh 0 hsla(2, 81%, 36%, 1);
+    background-image: url('../images/close-white.svg?v=1');
+}
+
+.keep {
+    background-color: hsla(201, 100%, 39%, 1);
+    border-color: hsla(201, 100%, 39%, 1);
+    box-shadow: 0 1vh 0 hsla(201, 100%, 25%, 1);
+    margin-left: 5vh;
+    background-image: url('../images/checkmark-white.svg?v=1');
+}
+
+.sweep:hover,
+.sweep:focus,
+.keep:hover,
+.keep:focus {
+    filter: drop-shadow(0 1vh 2vh hsla(0, 0%, 40%, 0.5));
+    text-shadow: 0 0 1vh hsla(0, 0%, 100%, 0.5);
+}
+
+.sweep:active,
+.keep:active {
+    box-shadow: 0 .5vh 0 hsla(2, 81%, 36%, 1);
+    /* Needs to be !important to overwrite animate.css rule */
+    transform: translate(0, .5vh) !important;
+    filter: drop-shadow(0 1vh 1vh hsla(0, 0%, 40%, 0.5));
+}
+.keep:active {
+    box-shadow: 0 .5vh 0 hsla(201, 100%, 25%, 1);
+}
+
+
+/* Empty content or all done */
+
+.card-empty {
+  color: hsla(0, 0%, 0%, .7);
+  text-align: center;
+  width: 50vh;
+  max-height: 70vh;
+  display: none;
+}
+
+/* Show emptycontent when all other cards are gone */
+.card-empty:first-child {
+    display: block;
+}
+
+/* Ad don’t show action buttons anymore */
+.actions:nth-child(2) {
+    display: none;
+}
+
+
+/* On desktop, buttons are to the side and cards fly over */
+@media only screen and (min-width: 1000px) {
+    twitter-status {
+        z-index: 10;
+    }
+
+    .actions {
+        position: initial;
+    }
+
+    .sweep {
+        position: absolute;
+        left: 10vh;
+    }
+
+    .keep {
+        position: absolute;
+        right: 10vh;
+    }
+}
