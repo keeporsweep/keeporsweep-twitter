@@ -3,9 +3,11 @@
 {% block content %}
 
 {% if user.status %}
+<div class="cards">
     {% for key, json_status in json_statuses %}
     <twitter-status id="{{ key }}" class="animated bounceInDown" status="{{ json_status }}"></twitter-status>
     {% endfor %}
+</div>
 {% endif %}
 <div class="card-empty">
     <h2>🐦🔀🗑️<br>All done!</h2>
@@ -19,4 +21,7 @@
     <button class="keep animated bounceInRight">Keep</button>
 </div>
 
+<script src="vendor/jquery-3.3.1.min.js"></script>
+<script src="vendor/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 {% endblock %}

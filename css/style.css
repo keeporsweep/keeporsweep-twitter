@@ -7,21 +7,28 @@ html {
 
 .container {
     display: flex;
-    padding-top: 10vh;
     justify-content: center;
     height: 100vh;
-    margin: 0 auto;
 }
 
 .page-header {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    border-bottom: none;
 }
 
 .btn {
     border-radius: 100px;
+}
+
+.cards {
+    display: flex;
+    padding-top: 10vh;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
 }
 
 twitter-status {
@@ -135,7 +142,7 @@ twitter-status:nth-child(3n) {
     display: block;
 }
 
-/* Ad don’t show action buttons anymore */
+/* And don’t show action buttons anymore */
 .actions:nth-child(2) {
     display: none;
 }
@@ -143,8 +150,13 @@ twitter-status:nth-child(3n) {
 
 /* On desktop, buttons are to the side and cards fly over */
 @media only screen and (min-width: 1000px) {
-    .container {
+    .container,
+    .cards {
         align-items: center;
+    }
+
+    .cards {
+        padding-top: 0;
     }
 
     twitter-status {

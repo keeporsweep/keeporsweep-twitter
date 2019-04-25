@@ -27,14 +27,15 @@ $user = $connection->get('account/verify_credentials', ['tweet_mode' => 'extende
 $count = 200;
 $statuses = $connection->get('statuses/user_timeline', [
   'count' => $count,
-  'include_entities' => 'true'
+  'include_entities' => 'true',
+  'max_id' => htmlspecialchars($_GET['id_str'])
 ]);
 
 // More requests take more time. Use a lower number for quick testing
 // The more requests, the older the tweets
 // To go through a profile with 10.000 Tweets you need a minimum of 50 requests
 // (50 * 200 API count limit, and then there’s the random offset)
-$max_requests = 5;
+$max_requests = 10;
 $tweets = [];
 
 for ($i = 0; $i < $max_requests; $i++) {
@@ -88,4 +89,4 @@ $data = [
     'user' => $user,
 ];
 
-echo $twig->render('app.html', $data);
+echo $twig->render('loadmore.html', $data);

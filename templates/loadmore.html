@@ -1,0 +1,5 @@
+{% if user.status %}
+    {% for key, json_status in json_statuses %}
+    <twitter-status id="{{ key }}" class="animated bounceInDown" status="{{ json_status }}"></twitter-status>
+    {% endfor %}
+{% endif %}
