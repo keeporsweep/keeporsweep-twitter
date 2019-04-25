@@ -5,19 +5,19 @@ html {
     overflow: hidden;
 }
 
+.container {
+    display: flex;
+    padding-top: 10vh;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
 .page-header {
     margin: 0;
     padding: 0;
     text-align: center;
     border-bottom: none;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0 auto;
 }
 
 .btn {
@@ -143,6 +143,10 @@ twitter-status:nth-child(3n) {
 
 /* On desktop, buttons are to the side and cards fly over */
 @media only screen and (min-width: 1000px) {
+    .container {
+        align-items: center;
+    }
+
     twitter-status {
         z-index: 10;
     }
