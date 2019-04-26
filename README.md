@@ -4,6 +4,8 @@
 
 Based on the great [TwitterOAuth PHP library](https://twitteroauth.com) and its demo site – thanks to [Abraham Williams](https://abrah.am)! 🎉
 
+Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview), so it shows conversation as well as count of replies & likes for context.
+
 
 ## 🏗 Setup
 1. Register a [Twitter app](https://apps.twitter.com).
@@ -15,15 +17,18 @@ Based on the great [TwitterOAuth PHP library](https://twitteroauth.com) and its 
 7. Visit [http://localhost:8000](http://localhost:8000) in a browser.
 
 
-## 📑 To do
+## 📑 To do basics
 - [ ] Pull the safety plug off the sweep action. Right now you need to manually uncomment the lines in the sweep function of `script.js` … just to be sure.
 - [x] Initial load is slow because of many API requests and building the HTML. Better make one request and show result directly, then do the other requests in the background.
-    - [ ] Reduce duplication in app.php and loadmore.php
-    - [ ] Need a way to log out before reaching the end, currently only works via going to [http://localhost:8000/clearsessions.php](http://localhost:8000/clearsessions.php)
-- [ ] There’s no count for replies, retweets or likes, and for replies the tweet being replied to is not shown. Could be fixed by replacing [<twitter-status>](https://github.com/abraham/twitter-status) with [Twitter’s official embedded tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview.html).
+- [ ] People need a way to log out before reaching the end, currently only works via going to [http://localhost:8000/clearsessions.php](http://localhost:8000/clearsessions.php)
+- [x] There’s no count for replies, retweets or likes, and for replies the tweet being replied to is not shown. Could be fixed by replacing [<twitter-status>](https://github.com/abraham/twitter-status) with [Twitter’s official embedded tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview.html).
 - [ ] Check if statuses/destroy also works for retweets or if `statuses/unretweet` is needed.
 
-### 📜 For future versions
-- [ ] For simplicity, just make click on anywhere on the embedded tweet open it in a new tab (not only the date).
+
+### 📜 To do advanced
+- [ ] The first batch of Tweets is hackily loaded via inserting invisible elements into the HTML first and getting the IDs from them via Javascript. This should be done properly.
+- [ ] Reduce duplication in app.php and loadmore.php
+- [ ] Currently it runs through tweets only once, picking random ones along the way. A lot of tweets are skipped that way. (Roughly only 1 in 100 is picked, as one API call is 200 Tweets and we choose randomly, and then use the position as new max_id.) People are prompted to refresh at the end, but maybe we can do this more elegantly if needed.
+- [ ] For simplicity, consider to have clicking anywhere on the embedded tweet open it in a new tab (not only the date).
 - [ ] Possibly implement showing favorited Tweets too, with `favorites/list` and `favorites/destroy`. Needs additional indicator then.
 - [ ] Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.

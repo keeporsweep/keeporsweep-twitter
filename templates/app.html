@@ -2,23 +2,27 @@
 
 {% block content %}
 
-{% if user.status %}
-<div class="cards">
-    {% for key, json_status in json_statuses %}
-    <twitter-status id="{{ key }}" class="animated bounceInDown" status="{{ json_status }}"></twitter-status>
+<div class="cards-staging">
+    {% for id_str in tweets %}
+    <div data-tweet-id="{{ id_str }}"></div>
     {% endfor %}
 </div>
+
+{% if user.status %}
+<div class="cards loading"></div>
 {% endif %}
 <div class="card-empty">
     <h2>🐦🔀🗑️<br>All done!</h2>
     <p>Refresh to keep or sweep again!</p>
-    <a class="btn btn-danger" href="/clearsessions.php"><img src="images/twitter.svg" alt="" /> Sign out</a>
-    <a class="btn btn-primary" href="/app.php"><img src="images/refresh.svg" alt="" /> Refresh!</a>
+    <p>
+        <a class="btn btn-danger" href="/clearsessions.php"><img src="images/twitter.svg" alt="" /> Sign out</a>
+        <a class="btn btn-primary" href="/app.php"><img src="images/refresh.svg" alt="" /> Refresh!</a>
+    </p>
 </div>
 
 <div class="actions">
-    <button class="sweep animated bounceInLeft">Sweep</button>
-    <button class="keep animated bounceInRight">Keep</button>
+    <button class="sweep">Sweep</button>
+    <button class="keep">Keep</button>
 </div>
 
 <script src="vendor/jquery-3.3.1.min.js"></script>

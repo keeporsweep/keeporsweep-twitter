@@ -25,41 +25,38 @@ html {
 
 .cards {
     display: flex;
-    padding-top: 10vh;
     justify-content: center;
-    height: 100vh;
-    margin: 0 auto;
+    align-items: center;
+    height: 70vh;
 }
 
-twitter-status {
-    position: absolute;
+twitter-widget {
+    position: absolute !important;
     box-shadow: 0 .3vh 4vh rgba(29, 29, 29, .3);
     border-radius: 3vh;
-    width: 500px;
-    max-width: 90%;
+    overflow: hidden;
+    width: 500px !important;
+    max-width: 90% !important;
     border: none;
-    display: none;
-}
-
-/* Only display first element */
-twitter-status:first-child {
-    display: block;
+    display: none !important;
+    min-height: 5vh;
 }
 
 /* Only box-shadow for first few elements */
-twitter-status:nth-first-child(-n+5) {
+twitter-widget:nth-first-child(-n+5) {
     /*display: inline-block;*/
     /* filter: drop-shadow is very laggy on mobile */
     box-shadow: 0 .3vh 4vh hsla(0, 0%, 10%, .1);
 }
 
 /* Slightly rotate every few other elements */
-twitter-status:nth-child(odd) {
-    transform: rotate(-3deg);
+/* TODO: Fix this because currently the visible element is always the first/odd one */
+twitter-widget:nth-child(odd) {
+    transform: rotate(-2deg);
 }
 
-twitter-status:nth-child(3n) {
-    transform: rotate(4deg);
+twitter-widget:nth-child(3n) {
+    transform: rotate(1deg);
 }
 
 
@@ -73,6 +70,7 @@ twitter-status:nth-child(3n) {
 
 .sweep,
 .keep {
+    display: none;
     width: 20vh;
     height: 20vh;
     padding: 0;
@@ -126,40 +124,33 @@ twitter-status:nth-child(3n) {
     box-shadow: 0 .5vh 0 hsla(201, 100%, 25%, 1);
 }
 
-
-/* Empty content or all done */
-
-.card-empty {
-  color: hsla(0, 0%, 0%, .7);
-  text-align: center;
-  width: 50vh;
-  max-height: 70vh;
-  display: none;
-}
-
-/* Show emptycontent when all other cards are gone */
-.card-empty:first-child {
-    display: block;
-}
-
-/* And don’t show action buttons anymore */
-.actions:nth-child(2) {
+/* Don’t show action buttons anymore when there are no cards left */
+.cards:empty ~ .actions {
     display: none;
 }
 
 
-/* On desktop, buttons are to the side and cards fly over */
-@media only screen and (min-width: 1000px) {
-    .container,
-    .cards {
+/* If the stack is all done */
+.card-empty {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* On desktop, buttons are to the side */
+@media only screen and (min-width: 1100px) {
+    .container {
         align-items: center;
     }
 
     .cards {
-        padding-top: 0;
+        height: 100vh;
     }
 
-    twitter-status {
+    twitter-widget {
         z-index: 10;
     }
 
@@ -175,5 +166,60 @@ twitter-status:nth-child(3n) {
     .keep {
         position: absolute;
         right: 10vh;
+    }
+}
+
+
+
+/* CSS loading spinner */
+
+.loading {
+	position: initial;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.loading:after {
+	z-index: 2;
+	content: '';
+	height: 32px;
+	width: 32px;
+	margin: -17px 0 0 -17px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 100%;
+	-webkit-animation: rotate .8s infinite linear;
+	animation: rotate .8s infinite linear;
+	-webkit-transform-origin: center;
+	-ms-transform-origin: center;
+	transform-origin: center;
+}
+
+.loading:after {
+	border: 2px solid rgba(150, 150, 150, 0.5);
+	border-top-color: #646464;
+}
+
+@-webkit-keyframes rotate {
+	from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+	}
+	to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+	}
+}
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
