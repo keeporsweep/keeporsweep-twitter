@@ -26,8 +26,13 @@ $user = $connection->get('account/verify_credentials');
 
 if (property_exists($user, 'status')) {
     // Delete is statuses/destroy, use favorites/create or /destroy for testing
-    // For retweets it’s statuses/unretweet
-    $tweet = $connection->post('statuses/destroy', [
+    // For retweets it says it’s statuses/unretweet, but statuses/destroy works too (because you get a specific ID for your own retweeted version)
+    // Also delete favorite status if you Sweep a tweet, in case it was a retweet
+    $connection->post('favorites/destroy', [
+      'id' => htmlspecialchars($_GET['id_str'])
+    ]);
+    // Delete the actual tweet
+    $connection->post('statuses/destroy', [
       'id' => htmlspecialchars($_GET['id_str'])
     ]);
 } else {

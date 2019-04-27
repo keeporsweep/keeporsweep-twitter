@@ -22,13 +22,14 @@ Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/do
 - [x] Initial load is slow because of many API requests and building the HTML. Better make one request and show result directly, then do the other requests in the background.
 - [x] People need a way to log out before reaching the end, currently only works via going to [http://localhost:8000/clearsessions.php](http://localhost:8000/clearsessions.php)
 - [x] There’s no count for replies, retweets or likes, and for replies the tweet being replied to is not shown. Could be fixed by replacing [<twitter-status>](https://github.com/abraham/twitter-status) with [Twitter’s official embedded tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview.html).
-- [ ] Check if statuses/destroy also works for retweets or if `statuses/unretweet` is needed. Maybe just do both on Sweep.
+- [x] Check if statuses/destroy also works for retweets or if `statuses/unretweet` is needed → it’s not needed, because you get a specific ID for your own retweeted version.
+- [x] For retweets which are swept, they are also unfavorited.
 
 
 ### 📜 To do advanced
+- [ ] Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
 - [ ] The first batch of Tweets is hackily loaded via inserting invisible elements into the HTML first and getting the IDs from them via Javascript. This should be done properly.
 - [ ] Reduce duplication in app.php and loadmore.php
 - [ ] Currently it runs through tweets only once, picking random ones along the way. A lot of tweets are skipped that way. (Roughly only 1 in 100 is picked, as one API call is 200 Tweets and we choose randomly, and then use the position as new max_id.) People are prompted to refresh at the end, but maybe we can do this more elegantly if needed.
 - [ ] For simplicity, consider to have clicking anywhere on the embedded tweet open it in a new tab (not only the date).
 - [ ] Possibly implement showing favorited Tweets too, with `favorites/list` and `favorites/destroy`. Needs additional indicator then.
-- [ ] Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
