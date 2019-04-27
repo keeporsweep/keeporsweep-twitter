@@ -133,16 +133,8 @@ $(document).ready(function() {
     // Already load the next set of Tweets in the background
     loadMore();
 
-    // Some CSS needs to be added afterwards, otherwise it shows the emptycontent and a glitchy card while loading
+    // Show loading spinner and defer button animation
     setTimeout(function (){
-        var style = document.createElement('style');
-        style.innerHTML =
-            // Only display first element
-            'twitter-widget:first-child { display: block !important; }' +
-            // Show emptycontent when all other cards are gone
-            '.cards:empty ~ .card-empty { display: flex; }';
-        $('body').append(style);
-
         // Show buttons
         $('.sweep').addClass('animated bounceInLeft').show();
         $('.keep').addClass('animated bounceInRight').show();

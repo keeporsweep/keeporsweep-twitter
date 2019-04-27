@@ -42,6 +42,11 @@ twitter-widget {
     min-height: 5vh;
 }
 
+/* Only display first card */
+.cards:not(.loading) twitter-widget:first-child {
+    display: block !important;
+}
+
 /* Only box-shadow for first few elements */
 twitter-widget:nth-first-child(-n+5) {
     /*display: inline-block;*/
@@ -151,12 +156,15 @@ twitter-widget.bounceOutLeft::after {
 }
 
 /* Don’t show action buttons anymore when there are no cards left */
-.cards:empty ~ .actions {
+.cards:not(.loading):empty ~ .actions {
     display: none;
 }
 
+/* Show emptycontent when all other cards are gone */
+.cards:not(.loading):empty ~ .card-empty {
+    display: flex;
+}
 
-/* If the stack is all done */
 .card-empty {
     display: none;
     flex-direction: column;
@@ -210,7 +218,6 @@ twitter-widget.bounceOutLeft::after {
         right: 10vh;
     }
 }
-
 
 
 /* Loading spinner */
