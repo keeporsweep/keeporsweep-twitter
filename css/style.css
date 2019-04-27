@@ -213,22 +213,14 @@ twitter-widget.bounceOutLeft::after {
 
 
 
-/* CSS loading spinner */
-
-.loading {
-	position: initial;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 16px;
-    min-height: 16px;
-}
+/* Loading spinner */
 
 .loading:after {
 	z-index: 2;
 	content: '';
-	height: 32px;
-	width: 32px;
-	margin: -17px 0 0 -17px;
+	height: 100px;
+	width: 100px;
+	margin: -50px 0 0 -50px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -241,7 +233,7 @@ twitter-widget.bounceOutLeft::after {
 }
 
 .loading:after {
-	border: 2px solid rgba(150, 150, 150, 0.5);
+	border: 10px solid rgba(150, 150, 150, 0.5);
 	border-top-color: #646464;
 }
 
