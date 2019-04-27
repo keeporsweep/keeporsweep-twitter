@@ -20,7 +20,7 @@ Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/do
 ## 📑 To do basics
 - [ ] Pull the safety plug off the sweep action. Right now you need to manually uncomment the lines in the sweep function of `script.js` … just to be sure.
 - [x] Initial load is slow because of many API requests and building the HTML. Better make one request and show result directly, then do the other requests in the background.
-- [ ] People need a way to log out before reaching the end, currently only works via going to [http://localhost:8000/clearsessions.php](http://localhost:8000/clearsessions.php)
+- [x] People need a way to log out before reaching the end, currently only works via going to [http://localhost:8000/clearsessions.php](http://localhost:8000/clearsessions.php)
 - [x] There’s no count for replies, retweets or likes, and for replies the tweet being replied to is not shown. Could be fixed by replacing [<twitter-status>](https://github.com/abraham/twitter-status) with [Twitter’s official embedded tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview.html).
 - [ ] Check if statuses/destroy also works for retweets or if `statuses/unretweet` is needed.
 

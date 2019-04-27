@@ -27,7 +27,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
 }
 
 twitter-widget {
@@ -164,6 +164,22 @@ twitter-widget.bounceOutLeft::after {
     align-items: center;
     width: 100%;
 }
+
+
+
+/* Log out button on the bottom */
+.btn-logout {
+    position: absolute;
+    bottom: 0;
+    opacity: .3;
+}
+
+.btn-logout:hover,
+.btn-logout:focus,
+.btn-logout:active {
+    opacity: .8;
+}
+
 
 
 /* On desktop, buttons are to the side */
