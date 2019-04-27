@@ -128,6 +128,7 @@ $(document).ready(function() {
     $('.cards-staging').children().each(function () {
         embedTweet($(this).attr('data-tweet-id'));
     });
+    $('.cards-staging').remove();
 
     // Already load the next set of Tweets in the background
     loadMore();
