@@ -60,6 +60,32 @@ twitter-widget:nth-child(3n) {
 }
 
 
+/* "Stamp" markers for feeback, when animating a card out */
+twitter-widget.bounceOutRight::after,
+twitter-widget.bounceOutLeft::after {
+    width: 20vh;
+    height: 20vh;
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -10vh;
+    margin-top: -10vh;
+    background-image: url('../images/checkmark-color.svg?v=1');
+    background-size: 10vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 10px solid hsla(201, 100%, 39%, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #fff, inset 0 0 0 5px #fff;
+}
+
+twitter-widget.bounceOutLeft::after {
+    background-image: url('../images/close-color.svg?v=1');
+    border-color: hsla(2, 81%, 55%, 1);
+}
+
+
 /* Actions */
 
 .actions {
