@@ -27,6 +27,7 @@ Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/do
 
 
 ### 📜 To do advanced
+- [x] Add sound effects on swipe: [Whooshes by asbestos bill](https://freesound.org/people/asbestos%20bill/sounds/181283/)
 - [ ] Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
 - [ ] The first batch of Tweets is hackily loaded via inserting invisible elements into the HTML first and getting the IDs from them via Javascript. This should be done properly.
 - [ ] Reduce duplication in app.php and loadmore.php

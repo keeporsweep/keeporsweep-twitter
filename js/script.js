@@ -50,6 +50,17 @@ function embedTweet(id_str) {
 }
 
 
+// Whoosh audio feedback on swipe
+function playWhoosh() {
+    // Just a bit of waiting to time it with animation
+    setTimeout(function (){
+        // Play a random sound of the 14 whooshes
+        audioNumber = Math.floor(Math.random() * 14) + 1;
+        $('.whoosh' + audioNumber).trigger('play');
+    }, 300);
+}
+
+
 // Load more Tweets in the background and append them to the list
 function loadMore() {
     $.ajax({
@@ -71,10 +82,15 @@ function loadMore() {
 
 function keep() {
     var keepElement = $('.cards twitter-widget:first-child');
+
+    // Animate element out and remove from DOM
     keepElement.addClass('bounceOutRight');
     keepElement.fadeOut(function() {
         keepElement.remove();
     });
+
+    // Play whoosh sound effect
+    playWhoosh();
 
     // The more you interact, the more Tweets are loaded
     loadMore();
@@ -83,10 +99,16 @@ function keep() {
 function sweep() {
     var sweepElement = $('.cards twitter-widget:first-child');
     var sweepElementId = sweepElement.attr('data-tweet-id');
+
+    // Animate element out and remove from DOM
     sweepElement.addClass('bounceOutLeft');
     sweepElement.fadeOut(function() {
         sweepElement.remove();
     });
+
+    // Play whoosh sound effect
+    playWhoosh();
+
     // Activate these lines if you want sweeping to be active
     //$.ajax({
     //    url: 'sweep.php?id_str=' + sweepElementId
