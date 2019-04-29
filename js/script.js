@@ -109,10 +109,16 @@ function sweep() {
     // Play whoosh sound effect
     playWhoosh();
 
-    // Activate these lines if you want sweeping to be active
-    //$.ajax({
-    //    url: 'sweep.php?id_str=' + sweepElementId
-    //});
+    // Handle deletion choice checkbox
+    if(document.getElementById('checkbox-delete').checked) {
+        // Really delete the element
+        $.ajax({
+            url: 'sweep.php?id_str=' + sweepElementId
+        });
+        console.log('DELETED ' + sweepElementId);
+    } else {
+        console.log('COULD have deleted ' + sweepElementId);
+    }
 
     // The more you interact, the more Tweets are loaded
     loadMore();
