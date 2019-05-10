@@ -38,8 +38,10 @@ function embedTweet(id_str) {
         twttr.widgets.createTweet(
             id_str,
             document.getElementsByClassName('cards')[0],
+            // It seems these parameters are not taken?
             {
-                width: '250',
+                cards: 'hidden',
+                width: '550',
                 dnt: 'true'
             }
         ).then(function(el) {
