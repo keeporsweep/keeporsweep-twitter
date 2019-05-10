@@ -12,7 +12,7 @@
 <div class="cards loading"></div>
 {% endif %}
 <div class="card-empty">
-    <h2>🐦🔀🗑️<br>All done!</h2>
+    <h2>🐦🔀🗑️<br>You swept <span class="sweep-counter">0</span> Tweets!</h2>
     <p>Refresh to keep or sweep again!</p>
     <p>
         <a class="btn btn-danger logout" href="/clearsessions.php"><img src="images/twitter.svg" alt="" /> Log out</a>
@@ -21,7 +21,10 @@
 </div>
 
 <div class="actions">
-    <button class="sweep">Sweep</button>
+    <button class="sweep">
+        Sweep
+        <div class="sweep-counter"></div>
+    </button>
     <button class="keep">Keep</button>
 </div>
 

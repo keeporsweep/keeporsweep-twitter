@@ -67,8 +67,8 @@ The next step for the algorithm is to just continuously save all the Tweet IDs f
 - [ ] People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector. Vertical monitor would be perfect for display of Tweet embed.
 - [ ] Unclear when Tweets are Retweets: Needs a better indicator for Retweets.
 - [ ] Sweeping could be more satisfying:
-    - [ ] Show a Sweep counter for feedback, e.g. in or below the Sweep button.
-    - [ ] Sound effects for spree sweeps (m-m-m-MONSTER SWEEP!) like in Quake.
+    - [x] Show a Sweep counter for feedback, e.g. in or below the Sweep button.
+    - [ ] Sound effects for spree sweeps (m-m-m-MONSTER SWEEP!) like in Unreal Tournament.
 - [ ] Sound effects not audible at crowded events: Need to be louder.
 - [ ] Super like / Love: Additional button which retweets _and_ likes the Tweet, even if it is your own.
 - [ ] Global high score table of sweep counter → maybe just Tweet from @keeporsweep with messages like "Yeah! @username swept 12 Tweets using http://keeporsweep.net 👏"

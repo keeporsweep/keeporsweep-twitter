@@ -1,4 +1,5 @@
 var max_id;
+var sweepCounter = 0;
 
 // Initialize Twitter embed function
 window.twttr = (function(d, s, id) {
@@ -121,6 +122,10 @@ function sweep() {
     } else {
         console.log('COULD have deleted ' + sweepElementId);
     }
+
+    // Increment sweep counter
+    sweepCounter++;
+    $('.sweep-counter').html(sweepCounter);
 
     // The more you interact, the more Tweets are loaded
     loadMore();

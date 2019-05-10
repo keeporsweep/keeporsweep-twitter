@@ -102,6 +102,7 @@ twitter-widget.bounceOutLeft::after {
 
 .sweep,
 .keep {
+    position: relative;
     display: none;
     width: 20vh;
     height: 20vh;
@@ -127,6 +128,15 @@ twitter-widget.bounceOutLeft::after {
     border-color: hsla(2, 81%, 55%, 1);
     box-shadow: 0 1vh 0 hsla(2, 81%, 36%, 1);
     background-image: url('../images/close-white.svg?v=1');
+}
+
+.sweep .sweep-counter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 2.5vh;
+    font-weight: normal;
+    opacity: .5;
 }
 
 .keep {
@@ -171,6 +181,7 @@ twitter-widget.bounceOutLeft::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
 }
 
