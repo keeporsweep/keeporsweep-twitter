@@ -129,9 +129,11 @@ function sweep() {
 document.onkeyup = function(e) {
     // Keep: Space, →, Enter
     if (e.which === 32 || e.which === 39 || e.which === 13) {
+        e.preventDefault();
         keep();
     // Sweep: Delete, ←
     } else if (e.which === 46 || e.which === 37) {
+        e.preventDefault();
         sweep();
     }
 };
