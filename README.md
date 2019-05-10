@@ -1,10 +1,33 @@
 # 🐦🔀🗑️ Keep or Sweep for Twitter
 
+Platforms like Twitter, Facebook and Instagram have your embarrassing old stuff that not even you know about anymore. Time to take a trip down memory lane and sweep it!
+
 ![](images/screenshot.png)
 
-Based on the great [TwitterOAuth PHP library](https://twitteroauth.com) and its demo site – thanks to [Abraham Williams](https://abrah.am)! 🎉
 
-Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview), so it shows conversation as well as count of replies & likes for context.
+## 💬 Testimonials
+
+> Every Nigerian politician needs this app so they can clean up their old lies.
+
+– [@enobong](https://twitter.com/enobong), 129+ Sweeps
+
+> I used this app and my cryptocoins are all still there.
+>
+> Trustworthy
+
+– [@mradwanz](https://twitter.com/mradwanz), 21 Sweeps
+
+> Ooh this is very empowering!
+>
+> Marie Kondo would be proud of this app
+
+– [@saadcaffeine](https://twitter.com/saadcaffeine), 13 Sweeps
+
+> `Insert testimonial here`
+
+– [@myamy_vicy](https://twitter.com/myamy_vicy), 12 Sweeps
+
+What do you think about Keep or Sweep? Let us know and include your Twitter username and Sweep score!
 
 
 ## 🏗 Setup
@@ -17,21 +40,53 @@ Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/do
 7. Visit [http://localhost:8000](http://localhost:8000) in a browser.
 
 
-## 📑 To do basics
-- [x] Pull the safety plug off the sweep action. Right now you need to manually uncomment the lines in the sweep function of `script.js` … just to be sure. Now works via checkbox in the interface, unchecked by default in this early stage.
-- [x] Initial load is slow because of many API requests and building the HTML. Better make one request and show result directly, then do the other requests in the background.
-- [x] People need a way to log out before reaching the end, currently only works via going to [http://localhost:8000/clearsessions.php](http://localhost:8000/clearsessions.php)
-- [x] There’s no count for replies, retweets or likes, and for replies the tweet being replied to is not shown. Could be fixed by replacing [<twitter-status>](https://github.com/abraham/twitter-status) with [Twitter’s official embedded tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview.html).
-- [x] Check if statuses/destroy also works for retweets or if `statuses/unretweet` is needed → it’s not needed, because you get a specific ID for your own retweeted version.
-- [x] For retweets which are swept, they are also unfavorited.
+## 🔮 How it works
+
+The Twitter API has a limit of 200 Tweets per request. So what we do:
+
+1. We request the 200 latest Tweets of the user
+2. Pick one random Tweet from those
+3. Go back to step 1, but with the picked random Tweet as `max_id` so it goes further into the past
+
+This is done in batches of 5: First 5 Tweets are delivered directly with page load, then when the page is loaded the next batch of 5 is fetched in the background. Then on every press of Keep or Sweep, another batch is loaded.
+
+The next step for the algorithm is to just continuously save all the Tweet IDs for the requests and get them to the client-side, then pick from there.
 
 
-### 📜 To do advanced
-- [x] Add sound effects on swipe: [Whooshes by asbestos bill](https://freesound.org/people/asbestos%20bill/sounds/181283/)
+## 🚦 Fixes and features
+
+### 🐛 Issues happening often
+- [ ] Embedded Tweets sometimes exceed viewport: Use max-height of embed or CSS to prevent overflow.
+- [ ] When you checked the "Really delete on sweep", using the space bar or the physical "Keep" button toggles the checkbox without noticing. Workaround is to click somewhere else after it is checked.
+- [ ] Right now you need to consent via the checkbox "Really delete on sweep", unchecked by default in this early stage. Eventually we should remove that and just activate it.
+- [ ] "Log out" on the bottom or at the end only logs you out of the app, but not out of Twitter. We should make sure to do that too.
+- [ ] People don’t know their passwords. We could possibly have a fallback where you just put in your username, and swept Tweets are added onto a list you could mail to yourself at the end.
+- [ ] Improve algorithm as described above, so it works well for people with few Tweets as well as many.
+
+### 📑 Enhancements
+- [ ] People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector.
+- [ ] Unclear when Tweets are Retweets: Needs a better indicator for Retweets.
+- [ ] Sweeping could be more satisfying:
+    - [ ] Show a Sweep counter for feedback, e.g. in or below the Sweep button.
+    - [ ] Sound effects for spree sweeps (m-m-m-MONSTER SWEEP!) like in Quake.
+- [ ] Sound effects not audible at crowded events: Need to be louder.
+- [ ] Super like / Love: Additional button which retweets _and_ likes the Tweet, even if it is your own.
+- [ ] Global high score table of sweep counter → maybe just Tweet from @keeporsweep with messages like "Yeah! @username swept 12 Tweets using http://keeporsweep.net 👏"
+
+
+### 📜 Advanced stuff and details
+- [ ] Fix callback denied page, just redirect to home again.
+- [ ] Currently white screen when Twitter can’t be reached, instead show note about it (maybe also wifi is slow).
 - [ ] Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
 - [ ] The first batch of Tweets is hackily loaded via inserting invisible elements into the HTML first and getting the IDs from them via Javascript. This should be done properly.
 - [ ] Reduce duplication in app.php and loadmore.php
-- [ ] Currently it runs through tweets only once, picking random ones along the way. A lot of tweets are skipped that way. (Roughly only 1 in 100 is picked, as one API call is 200 Tweets and we choose randomly, and then use the position as new max_id.) People are prompted to refresh at the end, but maybe we can do this more elegantly if needed.
-- [ ] For simplicity, consider to have clicking anywhere on the embedded tweet open it in a new tab (not only the date).
 - [ ] Possibly implement showing favorited Tweets too, with `favorites/list` and `favorites/destroy`. Needs additional indicator then.
 - [ ] Could also display people you are following, to unfollow. However it’s a level above (kind of a "collection" and not a single element) and thus there’s less context there.
+- [ ] Keep or Sweep x Wahl-o-mat: Show anonymized tweets of politicians, and show a result screen of parties you most agreed with.
+
+
+## ❤ Thanks
+
+Based on the great [TwitterOAuth PHP library](https://twitteroauth.com) and its demo site – thanks to [Abraham Williams](https://abrah.am)! 🎉
+
+Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview), so it shows conversation as well as count of replies & likes for context.
