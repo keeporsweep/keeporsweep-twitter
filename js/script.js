@@ -115,7 +115,7 @@ function sweep() {
         $.ajax({
             url: 'sweep.php?id_str=' + sweepElementId
         });
-        console.log('DELETED ' + sweepElementId);
+        console.log('❌ DELETED ' + sweepElementId);
     } else {
         console.log('COULD have deleted ' + sweepElementId);
     }
