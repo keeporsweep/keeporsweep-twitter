@@ -152,7 +152,7 @@ $('.sweep').click(function(){
 
 
 // Open Twitter log out page on app log out because otherwise it only logs out of Keep or Sweep
-$('#logout').click(function(){
+$('.logout').click(function(){
     window.open('https://twitter.com/logout', '_blank').focus();
 });
 

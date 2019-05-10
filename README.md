@@ -64,7 +64,7 @@ The next step for the algorithm is to just continuously save all the Tweet IDs f
 - [ ] Improve algorithm as described above, so it works well for people with few Tweets as well as many.
 
 ### 📑 Enhancements
-- [ ] People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector.
+- [ ] People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector. Vertical monitor would be perfect for display of Tweet embed.
 - [ ] Unclear when Tweets are Retweets: Needs a better indicator for Retweets.
 - [ ] Sweeping could be more satisfying:
     - [ ] Show a Sweep counter for feedback, e.g. in or below the Sweep button.
