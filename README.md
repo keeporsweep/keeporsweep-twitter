@@ -58,7 +58,7 @@ The next step for the algorithm is to just continuously save all the Tweet IDs f
 ### 🐛 Issues happening often
 - [ ] Embedded Tweets sometimes exceed viewport: Use max-height of embed or CSS to prevent overflow. → Seems the embed parameters `cards: 'hidden'` or `width: '550'` are not honored?
 - [x] When you checked the "Really delete on sweep", using the space bar or the physical "Keep" button toggles the checkbox without noticing. → Fixed.
-- [ ] Right now you need to consent via the checkbox "Really delete on sweep", unchecked by default in this early stage. Eventually we should remove that and just activate it.
+- [x] Right now you need to consent via the checkbox "Really delete on sweep", unchecked by default in this early stage. Eventually we should remove that and just activate it.
 - [x] "Log out" on the bottom or at the end only logs you out of the app, but not out of Twitter. → Now opens the Twitter log out page in a new tab.
 - [ ] People don’t know their passwords. We could possibly have a fallback where you just put in your username, and swept Tweets are added onto a list you could mail to yourself at the end.
 - [ ] Improve algorithm as described above, so it works well for people with few Tweets as well as many.

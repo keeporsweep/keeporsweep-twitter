@@ -186,7 +186,7 @@ twitter-widget.bounceOutLeft::after {
 }
 
 
-/* Delete checkbox and log out button on the bottom */
+/* Log out button on the bottom */
 .controls {
     position: absolute;
     bottom: 0;
@@ -197,21 +197,13 @@ twitter-widget.bounceOutLeft::after {
     display: none;
 }
 
-.controls .form-check {
-    vertical-align: middle;
-}
-
-.controls .btn-logout,
-.controls .form-check {
+.controls .btn-logout {
     opacity: .3;
 }
 
 .btn-logout:hover,
-.form-check:hover,
 .btn-logout:focus,
-.form-check:focus,
-.btn-logout:active,
-.form-check:active {
+.btn-logout:active {
     opacity: 1;
 }
 

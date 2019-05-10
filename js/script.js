@@ -112,16 +112,11 @@ function sweep() {
     // Play whoosh sound effect
     playWhoosh();
 
-    // Handle deletion choice checkbox
-    if(document.getElementById('checkbox-delete').checked) {
-        // Really delete the element
-        $.ajax({
-            url: 'sweep.php?id_str=' + sweepElementId
-        });
-        console.log('❌ DELETED ' + sweepElementId);
-    } else {
-        console.log('COULD have deleted ' + sweepElementId);
-    }
+    // ❌ Really delete the element
+    // Comment out these lines if you want to test something
+    $.ajax({
+        url: 'sweep.php?id_str=' + sweepElementId
+    });
 
     // Increment sweep counter
     sweepCounter++;
