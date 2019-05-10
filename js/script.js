@@ -149,6 +149,12 @@ $('.sweep').click(function(){
 });
 
 
+// Open Twitter log out page on app log out because otherwise it only logs out of Keep or Sweep
+$('#logout').click(function(){
+    window.open('https://twitter.com/logout', '_blank').focus();
+});
+
+
 // Start loading more tweets once the initial page is shown
 $(document).ready(function() {
     // Set initial max_id from the elements fed from PHP
