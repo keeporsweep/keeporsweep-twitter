@@ -10,7 +10,9 @@ $request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
 
 /* If denied, bail. */
 if (isset($_REQUEST['denied'])) {
-    exit('Permission was denied. Please start over.');
+    /* Redirect front page again. */
+    header('Location: ./');
+    exit;
 }
 
 /* If the oauth_token is not what we expect, bail. */
@@ -41,8 +43,6 @@ if (200 == $connection->getLastHttpCode()) {
     header('Location: ./clearsessions.php');
     exit;
 }
-
-// TODO: Loading feedback!
 
 // Redirect to profile page
 header('Location: ./app.php');

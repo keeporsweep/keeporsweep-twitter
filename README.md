@@ -70,18 +70,18 @@ The next step for the algorithm is to just continuously save all the Tweet IDs f
     - [x] Show a Sweep counter for feedback, e.g. in or below the Sweep button.
     - [ ] Sound effects for spree sweeps (m-m-m-MONSTER SWEEP!) like in Unreal Tournament.
 - [ ] Sound effects not audible at crowded events: Need to be louder.
-- [ ] Super like / Love: Additional button which retweets _and_ likes the Tweet, even if it is your own.
 - [ ] Global high score table of sweep counter → maybe just Tweet from @keeporsweep with messages like "Yeah! @username swept 12 Tweets using http://keeporsweep.net 👏"
 
 
 ### 📜 Advanced stuff and details
-- [ ] Fix callback denied page, just redirect to home again.
+- [x] Fix callback denied page, just redirect to home again.
 - [ ] Currently white screen when Twitter can’t be reached, instead show note about it (maybe also wifi is slow).
 - [ ] Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
 - [ ] The first batch of Tweets is hackily loaded via inserting invisible elements into the HTML first and getting the IDs from them via Javascript. This should be done properly.
 - [ ] Reduce duplication in app.php and loadmore.php
 - [ ] Possibly implement showing favorited Tweets too, with `favorites/list` and `favorites/destroy`. Needs additional indicator then.
 - [ ] Could also display people you are following, to unfollow. However it’s a level above (kind of a "collection" and not a single element) and thus there’s less context there.
+- [ ] Super like / Love: Additional button which retweets _and_ likes the Tweet, even if it is your own.
 - [ ] Keep or Sweep x Wahl-o-mat: Show anonymized tweets of politicians, and show a result screen of parties you most agreed with.
 
 
