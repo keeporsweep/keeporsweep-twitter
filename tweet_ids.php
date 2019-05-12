@@ -23,19 +23,19 @@ $options = [
     'trim_user' => TRUE,
 ];
 
-do {
+while (TRUE) {
     if(isset($max_id)) {
         $options['max_id'] = $max_id;
     }
     
     // statuses/user_timeline is tweets and retweets
     // favorites/list is favorites
-    $statuses = $connection->get('statuses/user_timeline', $options);
-    if ($statuses->errors) {
+    $response_data = $connection->get('statuses/user_timeline', $options);
+    if (is_object($response_data) && $response_data->errors) {
         break;
     }
 
-    $ids = array_map("get_id_str", $statuses);
+    $ids = array_map("get_id_str", $response_data);
 
     if(isset($max_id)) {
         // remove first element as it is also the last of the former call
@@ -44,14 +44,19 @@ do {
 
     $tweets = array_merge($tweets, $ids);
 
-    $max_id = $ids[count($ids) - 1];
-} while (count($ids) > 0);
-// for testing to save API quota:
-//} while (FALSE);
+    if(count($ids) > 0) {
+        $max_id = $ids[count($ids) - 1];
+    } else {
+        break;
+    }
+
+    // uncomment for testing to save API quota:
+    //break;
+}
 
 header('Content-Type: application/json');
-if ($statuses->errors) {
-    echo json_encode($statuses);
+if (is_object($response_data) && $response_data->errors) {
+    echo json_encode($response_data);
 } else {
     echo json_encode($tweets);
 }
