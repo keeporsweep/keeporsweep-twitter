@@ -43,7 +43,6 @@
                     document.getElementsByClassName('cards')[0],
                     // It seems these parameters are not taken?
                     {
-                        cards: 'hidden',
                         width: '550',
                         dnt: 'true'
                     }

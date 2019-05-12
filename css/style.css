@@ -119,7 +119,7 @@ twitter-widget.bounceOutLeft::after {
     filter: drop-shadow(0 1vh 2vh hsla(0, 0%, 40%, 0.5));
     cursor: pointer;
     transition: all .03s ease-in-out;
-    /* TODO: Find out why this does not remove the outlines */
+    border: 3px solid transparent;
     outline: none !important;
 }
 
@@ -152,7 +152,7 @@ twitter-widget.bounceOutLeft::after {
 .keep:hover,
 .keep:focus {
     filter: drop-shadow(0 1vh 2vh hsla(0, 0%, 40%, 0.5));
-    text-shadow: 0 0 1vh hsla(0, 0%, 100%, 0.5);
+    border: 3px solid hsla(0, 0%, 100%, .2);
 }
 
 .sweep:active,
@@ -161,6 +161,7 @@ twitter-widget.bounceOutLeft::after {
     /* Needs to be !important to overwrite animate.css rule */
     transform: translate(0, .5vh) !important;
     filter: drop-shadow(0 1vh 1vh hsla(0, 0%, 40%, 0.5));
+    border: 3px solid transparent;
 }
 .keep:active {
     box-shadow: 0 .5vh 0 hsla(201, 100%, 25%, 1);
