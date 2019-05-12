@@ -42,15 +42,7 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 
 ## 🔮 How it works
 
-The Twitter API has a limit of 200 Tweets per request. So what we do:
-
-1. We request the 200 latest Tweets of the user
-2. Pick one random Tweet from those
-3. Go back to step 1, but with the picked random Tweet as `max_id` so it goes further into the past
-
-This is done in batches of 5: First 5 Tweets are delivered directly with page load, then when the page is loaded the next batch of 5 is fetched in the background. Then on every press of Keep or Sweep, another batch is loaded.
-
-The next step for the algorithm is to just continuously save all the Tweet IDs for the requests and get them to the client-side, then pick from there.
+We fetch all of a user's Tweets from the Twitter API, randomize, and display them as embed one at a time to keep or sweep.
 
 
 ## 🚦 Fixes and features
@@ -61,7 +53,6 @@ The next step for the algorithm is to just continuously save all the Tweet IDs f
 - [x] Right now you need to consent via the checkbox "Really delete on sweep", unchecked by default in this early stage. Eventually we should remove that and just activate it.
 - [x] "Log out" on the bottom or at the end only logs you out of the app, but not out of Twitter. → Now opens the Twitter log out page in a new tab.
 - [ ] People don’t know their passwords. We could possibly have a fallback where you just put in your username, and swept Tweets are added onto a list you could mail to yourself at the end.
-- [ ] Improve algorithm as described above, so it works well for people with few Tweets as well as many.
 
 ### 📑 Enhancements
 - [ ] People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector. Vertical monitor would be perfect for display of Tweet embed.

@@ -2,12 +2,6 @@
 
 {% block content %}
 
-<div class="cards-staging">
-    {% for id_str in tweets %}
-    <div data-tweet-id="{{ id_str }}"></div>
-    {% endfor %}
-</div>
-
 {% if user.status %}
 <div class="cards loading"></div>
 {% endif %}
@@ -51,5 +45,6 @@
 
 <script src="vendor/jquery-3.3.1.min.js"></script>
 <script src="vendor/bootstrap.min.js"></script>
+<script src="vendor/lodash.min.js"></script>
 <script src="js/script.js"></script>
 {% endblock %}
