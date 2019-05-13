@@ -11,47 +11,40 @@ The app fetches all of a user’s Tweets from the Twitter API, randomizes, and d
 ## 💬 Testimonials
 
 > Every Nigerian politician needs this app so they can clean up their old lies.
-
-– [@enobong](https://twitter.com/enobong), 129+ Sweeps
-
+>
+> – [@enobong](https://twitter.com/enobong), 129+ Sweeps
 
 > Before I start using this, please remember that people can change.
-
-– [@hugoroyd](https://twitter.com/hugoroyd), 41 sweeps
-
+>
+> – [@hugoroyd](https://twitter.com/hugoroyd), 41 sweeps
 
 > Aaah where's the funny stuff!?
-
-– [@madeline_oh](https://twitter.com/madeline_oh), 29 sweeps
-
+>
+> – [@madeline_oh](https://twitter.com/madeline_oh), 29 sweeps
 
 > had a great meal: vegetables
-
-– [@pierreozoux](https://twitter.com/pierreozoux) (back in 2009), 27 sweeps
-
+>
+> – [@pierreozoux](https://twitter.com/pierreozoux) (back in 2009), 27 sweeps
 
 > I used this app and my cryptocoins are all still there.
 >
 > Trustworthy
-
-– [@mradwanz](https://twitter.com/mradwanz), 21 Sweeps
-
+>
+> – [@mradwanz](https://twitter.com/mradwanz), 21 Sweeps
 
 > Very very fun! Can you do this with other people's accounts?
-
-– [@christalib_](https://twitter.com/christalib_), 15 sweeps, including an accidental one
-
+>
+> – [@christalib_](https://twitter.com/christalib_), 15 sweeps, including an accidental one
 
 > Ooh this is very empowering!
 >
 > Marie Kondo would be proud of this app
-
-– [@saadcaffeine](https://twitter.com/saadcaffeine), 13 Sweeps
-
+>
+> – [@saadcaffeine](https://twitter.com/saadcaffeine), 13 Sweeps
 
 > `Insert testimonial here`
-
-– [@myamy_vicy](https://twitter.com/myamy_vicy), 12 Sweeps
+>
+> – [@myamy_vicy](https://twitter.com/myamy_vicy), 12 Sweeps
 
 What do you think about Keep or Sweep? Let us know and include your Twitter username and Sweep score!
 
