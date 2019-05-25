@@ -60,9 +60,9 @@
     function playWhoosh() {
         // Just a bit of waiting to time it with animation
         setTimeout(function (){
-            // Play a random sound of the 14 whooshes
-            var audioNumber = Math.floor(Math.random() * 14) + 1;
-            $('.whoosh' + audioNumber).trigger('play');
+            // Play a random sound of the 6 swishes
+            var audioNumber = Math.floor(Math.random() * 6) + 1;
+            $('.swish' + audioNumber).trigger('play');
         }, 300);
     }
 

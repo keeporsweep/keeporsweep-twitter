@@ -73,7 +73,6 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 - Unclear that sweep really deletes: Show a notice on first sweep only, that it will remove, and unretweet/unfavorite.
 - People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector. Vertical monitor would be perfect for display of Tweet embed.
 - Unclear when Tweets are Retweets: Needs a better indicator for Retweets.
-- Sound effects not audible at crowded events: Need to be louder.
 - Sweeping could be more satisfying: Sound effects for spree sweeps (m-m-m-MONSTER SWEEP!) like in Unreal Tournament.
 - Possibly implement showing favorited Tweets too, with `favorites/list` and `favorites/destroy`. Needs additional indicator then.
 - Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
@@ -89,6 +88,8 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 
 ## ❤ Thanks
 
-Based on the great [TwitterOAuth PHP library](https://twitteroauth.com) and its demo site – thanks to [Abraham Williams](https://abrah.am)! 🎉
+💻 Based on the great [TwitterOAuth PHP library](https://twitteroauth.com) and its demo site – thanks to [Abraham Williams](https://abrah.am)! 🎉
 
-Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview), so it shows conversation as well as count of replies & likes for context.
+🐦 Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview), so it shows conversation as well as count of replies & likes for context.
+
+📢 Swish sounds by [Pogotron](https://freesound.org/people/Pogotron/sounds/60835/).
