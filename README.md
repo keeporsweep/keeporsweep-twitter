@@ -32,6 +32,10 @@ The app fetches all of a user’s Tweets from the Twitter API, randomizes, and d
 >
 > – [@mradwanz](https://twitter.com/mradwanz), 21 Sweeps
 
+> ich hab nichts schlaues zu sagen, also sag ich einfach nichts
+>
+> – [@piperek_jen](https://twitter.com/piperek_jen) (back in 2016), 18 sweeps
+
 > Very very fun! Can you do this with other people's accounts?
 >
 > – [@christalib_](https://twitter.com/christalib_), 15 sweeps, including an accidental one
@@ -62,10 +66,11 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 ## 🚦 Fixes and features
 
 ### 🐛 Issues happening often
-- Embedded Tweets sometimes exceed viewport: Use max-height of embed or CSS to prevent overflow. → Seems the embed parameters `cards: 'hidden'` or `width: '550'` are not honored?
+- Embedded Tweets sometimes exceed viewport: Could use Javascript and then CSS with `transform: scale(0.5, 0.5);` based on how much larger than the viewport the Tweet is. Only seems to have issues with the animation for some reason.
 - People don’t know their passwords. We could possibly have a fallback where you just put in your username, and swept Tweets are added onto a list you could mail to yourself at the end.
 
 ### 📑 Enhancements
+- Unclear that sweep really deletes: Show a notice on first sweep only, that it will remove, and unretweet/unfavorite.
 - People in the audience have difficulty reading the Tweets: Needs a bigger screen for presentation, external monitor or even projector. Vertical monitor would be perfect for display of Tweet embed.
 - Unclear when Tweets are Retweets: Needs a better indicator for Retweets.
 - Sound effects not audible at crowded events: Need to be louder.
@@ -75,6 +80,7 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 
 ### 📜 Advanced stuff and details
 - Mouse cursor keeps showing when buttons are used: Hide mouse when in fullscreen and not moving.
+- When you play an embedded video, the cursor focus gets lost and the next click on a button does not react: Automatically unfocus after click inside Tweet?
 - Currently white screen when Twitter can’t be reached, instead show note about it (maybe also wifi is slow).
 - Could also display people you are following, to unfollow. However it’s a level above (kind of a "collection" and not a single element) and thus there’s less context there.
 - Super like / Love: Additional button which retweets _and_ likes the Tweet, even if it is your own.
