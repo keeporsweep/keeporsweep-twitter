@@ -79,7 +79,6 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 - Ability to undo last action would be nice. But in the case of sweeping we then need to hold off on actual deletion until the next action.
 
 ### 📜 Advanced stuff and details
-- Mouse cursor keeps showing when buttons are used: Hide mouse when in fullscreen and not moving.
 - When you play an embedded video, the cursor focus gets lost and the next click on a button does not react: Automatically unfocus after click inside Tweet?
 - Currently white screen when Twitter can’t be reached, instead show note about it (maybe also wifi is slow).
 - Could also display people you are following, to unfollow. However it’s a level above (kind of a "collection" and not a single element) and thus there’s less context there.

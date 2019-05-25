@@ -164,6 +164,35 @@
     });
 
 
+    // Hide cursor when idle
+    // From https://gist.github.com/scmx/1f79adde2e9c69912fee520a246ec9e5
+    document.addEventListener('DOMContentLoaded', () => {
+        let idleMouseTimer;
+        let forceMouseHide = false;
+
+        document.body.style.cursor = 'none';
+
+        // Your wrapper here
+        document.body.addEventListener('mousemove', () => {
+            if (forceMouseHide) {
+                return;
+            }
+
+            document.body.style.cursor = '';
+            clearTimeout(idleMouseTimer);
+
+            idleMouseTimer = setTimeout(() => {
+                document.body.style.cursor = 'none';
+                forceMouseHide = true;
+
+                setTimeout(() => {
+                    forceMouseHide = false;
+                }, 200);
+            }, 3000);
+        });
+    });
+
+
     // Start loading more tweets once the initial page is shown
     $(document).ready(function() {
         // Already load the next set of Tweets in the background
