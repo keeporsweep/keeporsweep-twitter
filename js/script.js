@@ -66,6 +66,19 @@
         }, 300);
     }
 
+    // Screenshake feedback on swipe
+    function screenshake() {
+        setTimeout(function (){
+            // Just shake for a little bit
+            $('body').addClass('pulseShake');
+
+            setTimeout(function (){
+                // Just shake for a little bit
+                $('body').removeClass('pulseShake');
+            }, 300);
+        }, 200);
+    }
+
 
     function fetchTweets() {
         return $.getJSON('tweet_ids.php')
@@ -97,6 +110,9 @@
         // Play whoosh sound effect
         playWhoosh();
 
+        // Shake screen!
+        screenshake();
+
         // queue one more
         embedTweet(queue[bufferSize]);
 
@@ -116,6 +132,9 @@
 
         // Play whoosh sound effect
         playWhoosh();
+
+        // Shake screen!
+        screenshake();
 
         // ❌ Really delete the element
         // Comment out these lines if you want to test something
