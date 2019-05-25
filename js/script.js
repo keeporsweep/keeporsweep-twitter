@@ -131,9 +131,7 @@
 
         // ❌ Really delete the element
         // Comment out these lines if you want to test something
-        $.ajax({
-            url: 'sweep.php?id_str=' + sweepElementId
-        });
+        $.ajax({ url: 'sweep.php?id_str=' + sweepElementId });
 
         // queue one more
         embedTweet(queue[bufferSize]);
