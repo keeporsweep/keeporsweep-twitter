@@ -92,4 +92,4 @@ What do you think about Keep or Sweep? Let us know and include your Twitter user
 
 🐦 Using the official [Twitter embedded Tweets](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview), so it shows conversation as well as count of replies & likes for context.
 
-📢 Swish sounds by [Pogotron](https://freesound.org/people/Pogotron/sounds/60835/).
+📢 Swish sounds by [Pogotron](https://freesound.org/people/Pogotron/sounds/60835/). Smash sounds by [tezzza](https://freesound.org/people/tezzza/sounds/21613/), [mgamabile](https://freesound.org/people/mgamabile/sounds/440773/) & [Agaxly](https://freesound.org/people/Agaxly/packs/14363/).

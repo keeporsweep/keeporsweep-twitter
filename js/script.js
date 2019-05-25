@@ -67,6 +67,17 @@
     }
 
 
+    // Smash audio feedback on sweep
+    function playSmash() {
+        // Waiting to time it with swish sound and right moment
+        setTimeout(function (){
+            // Play a random sound of the 5 smashes
+            var audioNumber = Math.floor(Math.random() * 5) + 1;
+            $('.smash' + audioNumber).trigger('play');
+        }, 550);
+    }
+
+
     function fetchTweets() {
         return $.getJSON('tweet_ids.php')
         .then(function(data) {
@@ -114,8 +125,9 @@
             sweepElement.remove();
         });
 
-        // Play whoosh sound effect
+        // Play whoosh and smash sound effect
         playWhoosh();
+        playSmash();
 
         // ❌ Really delete the element
         // Comment out these lines if you want to test something
